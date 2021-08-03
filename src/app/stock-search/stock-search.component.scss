@@ -1,0 +1,23 @@
+.stock-search-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .stock-symbol-input{
+        width: 45%;
+        margin-right: 1%;
+        margin: 5%;
+        color: #F6F7F8;
+    }
+    .stock-search-btn{
+        background-color: #6c757d !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .stock-symbol-input{
+        width: 100% !important;
+    }
+}
