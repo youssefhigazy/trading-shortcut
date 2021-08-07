@@ -8,6 +8,7 @@ import { TradingChartsComponent } from './trading-charts/trading-charts.componen
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     TradingChartsComponent,
     StockSearchComponent,
     AboutUsComponent,
-    FooterComponent
+    FooterComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,

@@ -21,12 +21,18 @@
     }
     .subtabs-container {
         ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             list-style: none;
             margin: auto auto;
             padding: 15px 15px;
             li {
                 cursor: pointer;
                 color: #F6F7F8;
+                margin-left: 15px;
                 &:hover{
                     color: rgba(246, 247, 248, 0.815);
                 }
