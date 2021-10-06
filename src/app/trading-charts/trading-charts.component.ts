@@ -16,12 +16,12 @@ export class TradingChartsComponent implements OnInit {
   searchedStocksLocalStorageParsed: string[];
   ar_chart: any;
   en_chart: any;
-  modal: HTMLElement;
+  // modal: HTMLElement;
 
   constructor(private route: ActivatedRoute, private title: Title) { }
 
   ngOnInit(): void {
-    this.modal = document.querySelector(".modal");
+    // this.modal = document.querySelector(".modal");
     this.searchedStocks = [];
     this.searchedStocksLocalStorage = localStorage.getItem("searchedStocks");
     this.searchedStocksLocalStorageParsed = JSON.parse(localStorage.getItem("searchedStocks"));
@@ -29,8 +29,7 @@ export class TradingChartsComponent implements OnInit {
     this.en_chart = document.querySelector(".en-chart");
     
     this.route.paramMap.subscribe(params => {
-      console.log(params);
-      if (!params.get("stock")) this.showModal();
+      // if (!params.get("stock")) this.showModal();
 
       if (params.get("language")) this.ar_chart.checked = true;
     
@@ -112,11 +111,11 @@ export class TradingChartsComponent implements OnInit {
     this.searchedStocksLocalStorageParsed = JSON.parse(localStorage.getItem("searchedStocks"));
   }
 
-  showModal(): void{
-    this.modal.classList.add("toggle-modal");
-  }
+  // showModal(): void{
+  //   this.modal.classList.add("toggle-modal");
+  // }
   
-  hideModal(): void{
-    this.modal.classList.remove("toggle-modal");
-  }
+  // hideModal(): void{
+  //   this.modal.classList.remove("toggle-modal");
+  // }
 }
