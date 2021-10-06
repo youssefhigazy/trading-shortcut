@@ -35,20 +35,20 @@ describe('TradingChartsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should check if the -What is new?- modal appear once the page is loaded', () => {
+  // it('should check if the -What is new?- modal appear once the page is loaded', () => {
     
-    let modalToggleClassName = 'toggle-modal';
+  //   let modalToggleClassName = 'toggle-modal';
 
-    component.showModal();
+  //   component.showModal();
     
-    expect(component.modal.classList.contains(modalToggleClassName)).toBe(true);
-  });
+  //   expect(component.modal.classList.contains(modalToggleClassName)).toBe(true);
+  // });
 
-  it('should check if the -What is new?- modal remove once the X button is clicked', () => {
-    let modalToggleClassName = 'toggle-modal';
+  // it('should check if the -What is new?- modal remove once the X button is clicked', () => {
+  //   let modalToggleClassName = 'toggle-modal';
 
-    component.hideModal();
+  //   component.hideModal();
 
-    expect(component.modal.classList.contains(modalToggleClassName)).toBe(false);
-  });
+  //   expect(component.modal.classList.contains(modalToggleClassName)).toBe(false);
+  // });
 });
