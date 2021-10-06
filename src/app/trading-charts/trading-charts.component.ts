@@ -1,4 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+
 declare const TradingView: any;
 
 @Component({
@@ -13,15 +16,30 @@ export class TradingChartsComponent implements OnInit {
   searchedStocksLocalStorageParsed: string[];
   ar_chart: any;
   en_chart: any;
+  // modal: HTMLElement;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private title: Title) { }
 
   ngOnInit(): void {
+    // this.modal = document.querySelector(".modal");
     this.searchedStocks = [];
     this.searchedStocksLocalStorage = localStorage.getItem("searchedStocks");
     this.searchedStocksLocalStorageParsed = JSON.parse(localStorage.getItem("searchedStocks"));
     this.ar_chart = document.querySelector(".ar-chart");
     this.en_chart = document.querySelector(".en-chart");
+    
+    this.route.paramMap.subscribe(params => {
+      // if (!params.get("stock")) this.showModal();
+
+      if (params.get("language")) this.ar_chart.checked = true;
+    
+      if (params.get("stock")) {
+        let stock = params.get("stock");
+        this.stockChart(stock);
+        this.title.setTitle(`${params.get("stock")} | Trading Shortcut`);
+      } 
+      else this.title.setTitle(`Home | Trading Shortcut`);
+    })
   }
 
   stockChart(requestedStock: string): void {
@@ -58,7 +76,9 @@ export class TradingChartsComponent implements OnInit {
         ); 
 
         this.addToStockList(requestedStock);
-      } catch (error) {
+      } 
+      catch (error) {
+        console.log(error);
     }
   }
 
@@ -90,4 +110,12 @@ export class TradingChartsComponent implements OnInit {
     this.searchedStocksLocalStorage = localStorage.getItem("searchedStocks");
     this.searchedStocksLocalStorageParsed = JSON.parse(localStorage.getItem("searchedStocks"));
   }
+
+  // showModal(): void{
+  //   this.modal.classList.add("toggle-modal");
+  // }
+  
+  // hideModal(): void{
+  //   this.modal.classList.remove("toggle-modal");
+  // }
 }

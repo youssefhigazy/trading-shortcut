@@ -5,10 +5,12 @@ import { DescriptionComponent } from './description/description.component';
 import { TradingChartsComponent } from './trading-charts/trading-charts.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: TradingChartsComponent },
   { path: "description", component: DescriptionComponent },
-  { path: "about-us", component: AboutUsComponent }
+  { path: "about-us", component: AboutUsComponent },
+  { path: ":stock", component: TradingChartsComponent },
+  { path: ":language/:stock", component: TradingChartsComponent },
 ];
 
 @NgModule({

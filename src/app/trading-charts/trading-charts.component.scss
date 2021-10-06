@@ -98,3 +98,36 @@
         color: #F6F7F8;
     }
 }
+
+.toggle-modal{
+    height: 100vh;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    .modal-dialog{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .modal-content{
+            background-color: #F6F7F8 !important;
+            .modal-header{
+                background-color: #F6F7F8 !important;
+                .modal-title{
+                    background-color: #F6F7F8 !important;
+                }
+                .close{
+                    background-color: #F6F7F8 !important;
+                    color: #000;
+                }
+            }
+            .modal-body{
+                background-color: #F6F7F8 !important;
+                p{
+                    background-color: #F6F7F8 !important;
+                }
+            }
+        }
+    }
+}
